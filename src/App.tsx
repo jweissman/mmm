@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import RecipeMaker from './components/RecipeMaker';
 import './App.css';
 
 const App: React.FC = () => {
+  let message = "let's organize your recipes together!";
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>mmmlang</h1>
+        <h4>a tiny language for recipes</h4>
       </header>
+      <main className="App-main">
+        <h3>hello there</h3>
+        <p>
+          {message}
+        </p>
+        <RecipeMaker />
+      </main>
     </div>
   );
 }

@@ -1,0 +1,31 @@
+mmmlang {
+  Recipe
+    = ListOf<Ingredient, #br> ListOf<Step, #br>
+  Ingredient (a delicious ingredient in a recipe)
+    = number unit text
+  Step (a numbered step with description in a recipe)
+    = number "." text
+  unit (a well-known unit)
+    = "whole"
+    | "units"
+    | "pieces"
+    | "fronds"
+    | "cloves"
+    | "lbs"
+    | "pounds"
+    | "pints"
+    | "ounces"
+    | "quarts"
+    | "teaspoons"
+    | "of a"
+  br (a line break)
+    = "\n" | "\r"
+  text (a block of text)
+    = letter (~br (letter | space | "-"))+
+  ident  (an identifier)
+    = letter alnum*
+  number  (a number)
+    = digit* "." digit+  -- decimal
+    | digit* "/" digit+ -- fract
+    | digit+             -- whole
+}
